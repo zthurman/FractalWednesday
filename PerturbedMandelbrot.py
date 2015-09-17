@@ -9,8 +9,9 @@ import matplotlib.pyplot as plt
 def mandelbrot( h, w, maxit=30):
      # Returns an image of the Mandelbrot fractal of size (h,w). Lower the maxit count, the less detail in the
      # set. Increase maxit for more details.
-    
-    y,x = ogrid[ -1.4:1.4:h*1j, -2:0.8:w*1j ]		# complex plane for set to set
+
+    #y,x = ogrid[ -1.4:1.4:h*1j, -2:0.8:w*1j ]		# complex plane for set to set
+    #y,x = np.mgrid[ -1.4:1.4:h*1j, -2:0.8:w*1j ]
     c = x+y*1j			# initialized c value
     z = c		# first z value intialized to c
 
