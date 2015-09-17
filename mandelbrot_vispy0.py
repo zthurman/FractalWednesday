@@ -4,9 +4,14 @@
 # Copyright (c) 2014, Vispy Development Team. All Rights Reserved.
 # Distributed under the (new) BSD License. See LICENSE.txt for more info.
 # -----------------------------------------------------------------------------
-# Author: John David Reaver
+# Copyright (C) 2015 Zechariah Thurman
+# GNU GPLv2, compatible with the above (new) BSD License/Modified BSD License
+# -----------------------------------------------------------------------------
+# Original Author: John David Reaver
 # Date:   04/29/2014
 # -----------------------------------------------------------------------------
+# Revision Author: Zechariah Thurman
+# Date:   09/16/2015
 
 # Imports
 
@@ -54,7 +59,7 @@ vec4 color_scheme(float x) {
 }
 
 void main() {
-    vec2 z, c;
+    vec2 z, c;  // an, bn, cn. dn d0;
 
     // Recover coordinates from pixel coordinates
     c.x = (gl_FragCoord.x / resolution.x - 0.5) * scale + center.x;
@@ -62,10 +67,13 @@ void main() {
 
     // Main Mandelbrot computation
     int i;
+    // c = c.x+c.y*1j
     z = c;
     for(i = 0; i < iter; i++) {
         float x = (z.x * z.x - z.y * z.y) + c.x;  // zx^2 - zy^2 + cx
         float y = (z.y * z.x + z.x * z.y) + c.y;  // zy*zx + zx*zy + cy
+
+        //
 		
 
         if((x * x + y * y) > 4.0) break;  // divergence condition
