@@ -27,7 +27,7 @@ def mandelbrot( h, w, maxit=35):
 
     for i in xrange(maxit):
         z  = z**2 +  c   #   mandelbrot eqn
-    # print z
+
     # terms from superfractalthing perturbation implementation
         cn = 2*z*cn + 2*an*bn  # c term
         bn = 2*z*bn + an**2   # b term
@@ -45,7 +45,7 @@ def mandelbrot( h, w, maxit=35):
         # c = -0.1011 + 0.9563j
         # c = 0.001643721971153 - 0.822467633298876j
 
-        yn = dn + z				# perturbed Mandel yn solns
+        yn = z + dn				# perturbed Mandel yn solns
         diverge = ((yn)*(np.conj(yn))).real > 25**25     # who is diverging, term on the right of the inequality determines level of detail
         div_now = diverge & (divtime==maxit)  # who is diverging now
         divtime[div_now] = i                  # note when
