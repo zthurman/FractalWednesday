@@ -6,7 +6,7 @@ import pylab
 import matplotlib.pyplot as plt
 
 
-def mandelbrot( h, w, maxit=25):
+def mandelbrot( h, w, maxit=30):
      # Returns an image of the Mandelbrot fractal of size (h,w). Lower the maxit count, the less detail in the
      # set. Increase maxit for more details.
     
