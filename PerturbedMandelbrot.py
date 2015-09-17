@@ -18,7 +18,7 @@ def mandelbrot( h, w, maxit=35):
     c = x+y*1j			# initialized c value
     z = c		# first z value intialized to c
 
-    divtime = maxit +  np.zeros(z.shape, dtype=int)		# time of divergence
+    dtime = maxit +  np.zeros(z.shape, dtype=int)		# time of divergence
     an = 0 + 0j		# a initial value, hint came from: http://math.stackexchange.com/questions/939270/perturbation-of-mandelbrot-set-fractal
     bn = 0 + 0j		# b initial value, although these values really don't matter
     cn = 0 + 0j		# c initial value, like at all
@@ -47,10 +47,10 @@ def mandelbrot( h, w, maxit=35):
 
         yn = z + dn				# perturbed Mandel yn solns
         diverge = ((yn)*(np.conj(yn))).real > 25**25     # who is diverging, term on the right of the inequality determines level of detail
-        div_now = diverge & (divtime==maxit)  # who is diverging now
-        divtime[div_now] = i                  # note when
+        div_now = diverge & (dtime==maxit)  # who is diverging now
+        dtime[div_now] = i                  # note when
         z[diverge] = 2                       # avoid diverging too much
-    return divtime
+    return dtime
 
 if __name__ == "__main__":
     plt.figure(num=None, figsize=(10, 10), dpi=80, facecolor='w', edgecolor='k')

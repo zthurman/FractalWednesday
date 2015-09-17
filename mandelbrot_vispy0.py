@@ -59,7 +59,7 @@ vec4 color_scheme(float x) {
 }
 
 void main() {
-    vec2 z, c;  // an, bn, cn. dn d0;
+    vec2 z, c;  // an, bn, cn, dn, d0, dtime;
 
     // Recover coordinates from pixel coordinates
     c.x = (gl_FragCoord.x / resolution.x - 0.5) * scale + center.x;
@@ -67,8 +67,17 @@ void main() {
 
     // Main Mandelbrot computation
     int i;
+
     // c = c.x+c.y*1j
     z = c;
+
+    // dtime = maxit +  np.zeros(z.shape, dtype=int)		// time of divergence
+    // an = 0 + 0j
+    // bn = 0 + 0j
+    // cn = 0 + 0j
+    // d0 = c
+
+
     for(i = 0; i < iter; i++) {
         float x = (z.x * z.x - z.y * z.y) + c.x;  // zx^2 - zy^2 + cx
         float y = (z.y * z.x + z.x * z.y) + c.y;  // zy*zx + zx*zy + cy
