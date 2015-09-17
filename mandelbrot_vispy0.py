@@ -64,11 +64,11 @@ void main() {
     int i;
     z = c;
     for(i = 0; i < iter; i++) {
-        float x = (z.x * z.x - z.y * z.y) + c.x;
-        float y = (z.y * z.x + z.x * z.y) + c.y;
+        float x = (z.x * z.x - z.y * z.y) + c.x;  // zx^2 - zy^2 + cx
+        float y = (z.y * z.x + z.x * z.y) + c.y;  // zy*zx + zx*zy + cy
 		
 
-        if((x * x + y * y) > 4.0) break;
+        if((x * x + y * y) > 4.0) break;  // divergence condition
         z.x = x;
         z.y = y;
     }
