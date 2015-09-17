@@ -6,7 +6,7 @@ import pylab
 import matplotlib.pyplot as plt
 
 
-def mandelbrot( h, w, maxit=100):
+def mandelbrot( h, w, maxit=25):
      # Returns an image of the Mandelbrot fractal of size (h,w). Lower the maxit count, the less detail in the
      # set. Increase maxit for more details.
     
@@ -42,7 +42,7 @@ def mandelbrot( h, w, maxit=100):
         # c = 0.001643721971153 - 0.822467633298876j
 
         yn = dn + z				# perturbed Mandel yn solns
-        diverge = ((yn)*(conj(yn))).real > 25**25      # who is diverging, term on the right of the inequality determines level of detail
+        diverge = ((yn)*(conj(yn))).real > 25**25     # who is diverging, term on the right of the inequality determines level of detail
         div_now = diverge & (divtime==maxit)  # who is diverging now
         divtime[div_now] = i                  # note when
         z[diverge] = 2                       # avoid diverging too much
