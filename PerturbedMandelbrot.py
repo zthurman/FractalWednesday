@@ -4,9 +4,6 @@
 from numpy import *
 import pylab
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import numpy as np
-import matplotlib
 
 
 def mandelbrot( h, w, maxit=100):
