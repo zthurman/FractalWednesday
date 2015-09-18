@@ -82,7 +82,11 @@ void main() {
         float x = (z.x * z.x - z.y * z.y) + c.x;  // zx^2 - zy^2 + cx
         float y = (z.y * z.x + z.x * z.y) + c.y;  // zy*zx + zx*zy + cy
 
-        //
+        // float cn = 2*z*cn + 2*an*bn  // c term
+        // float bn = 2*z*bn + an**2   // b term
+        // float an = 2*z*an + 1	     // a term
+        // float d = an*d0 + bn*d0**2 + cn*d0**3  // delta_n eqn
+        // float dn = 2*z*d + d**2 + d0     // delta_n+1 eqn
 		
 
         if((x * x + y * y) > 4.0) break;  // divergence condition
