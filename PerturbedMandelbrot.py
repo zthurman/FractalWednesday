@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Perturbation theory implementation of the Mandelbrot set
+# Perturbation theory implementation of the Mandelbrot set.
 
 # Copyright (C) 2015 Zechariah Thurman
 # GNU GPLv2
@@ -11,11 +11,11 @@ import numpy as np
 
 def mandelbrot( h, w, maxit=35):
      # Returns an image of the Mandelbrot fractal of size (h,w). Lower the maxit count, the less detail in the
-     # set. Increase maxit for more details.
+     # set. Increase maxit for more detailed rendering.
 
-    #y,x = ogrid[ -1.4:1.4:h*1j, -2:0.8:w*1j ]		# complex plane for set to set on, either ogrid or mgrid work
+    #y,x = ogrid[ -1.4:1.4:h*1j, -2:0.8:w*1j ]		# complex plane for set to set on, either ogrid or mgrid work, mgrid is more conventional
     y,x = np.mgrid[ -1.4:1.4:h*1j, -2:0.8:w*1j ]
-    c = x+y*1j			# initialized c value
+    c = x + y*1j			# initialized c value
     z = c		# first z value intialized to c
 
     dtime = maxit +  np.zeros(z.shape, dtype=int)		# time of divergence
