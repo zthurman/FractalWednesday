@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def mandelbrot( h, w, maxit=38):
+def mandelbrot( h, w, maxit=35):
      # Returns an image of the Mandelbrot fractal of size (h,w). Lower the maxit count, the less detail in the
      # set. Increase maxit for more detailed rendering.
 
