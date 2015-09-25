@@ -87,7 +87,6 @@ void main() {
         // float an = 2*z*an + 1	     // a term
         // float d = an*d0 + bn*d0**2 + cn*d0**3  // delta_n eqn
         // float dn = 2*z*d + d**2 + d0     // delta_n+1 eqn
-		
 
         if((x * x + y * y) > 4.0) break;  // divergence condition
         z.x = x;
