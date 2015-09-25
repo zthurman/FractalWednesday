@@ -82,9 +82,12 @@ void main() {
         float x = (z.x * z.x - z.y * z.y) + c.x;  // zx^2 - zy^2 + cx
         float y = (z.y * z.x + z.x * z.y) + c.y;  // zy*zx + zx*zy + cy
 
-        // float cn = 2*z*cn + 2*an*bn  // c term
-        // float bn = 2*z*bn + an**2   // b term
-        // float an = 2*z*an + 1	     // a term
+        // float cnx = 2*x*cnx + 2*anx*bnx  // cx term
+        // float cny = 2*y*cny + 2*any*bny  // cy term
+        // float bnx = 2*x*bnx + anx**2   // bx term
+        // float bny = 2*y*bny + any**2   // by term
+        // float anx = 2*anx*any + 1	     // a term
+        // float any = 2*any*anx + 1
         // float d = an*d0 + bn*d0**2 + cn*d0**3  // delta_n eqn
         // float dn = 2*z*d + d**2 + d0     // delta_n+1 eqn
 
