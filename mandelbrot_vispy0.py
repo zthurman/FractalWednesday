@@ -67,6 +67,7 @@ void main() {
 
     // Main Mandelbrot computation
     int i;
+    int maxit = 35;
 
     // c = c.x+c.y*1j
     z = c;
