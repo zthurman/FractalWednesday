@@ -59,7 +59,7 @@ vec4 color_scheme(float x) {
 }
 
 void main() {
-    vec2 z, c;  // an, bn, cn, dn, d0, dtime;
+    vec2 z, c, an, bn, cn, dn, d0, dtime;
 
     // Recover coordinates from pixel coordinates
     c.x = (gl_FragCoord.x / resolution.x - 0.5) * scale + center.x;
