@@ -68,8 +68,9 @@ void main() {
     // Main Mandelbrot computation
     int i;
     int maxit = 35;
+    int j = sqrt(-1);
 
-    // c = c.x+c.y*1j
+    //c = c.x+c.y*1j
     z = c;
 
     // dtime = maxit +  np.zeros(z.shape, dtype=int)		// time of divergence
